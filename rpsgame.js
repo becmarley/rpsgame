@@ -9,7 +9,7 @@ const tie = "It was a tie";
 const playerWin = "You won! ";
 const computerWin = "You lose! ";
 const oops = "Please try again";
-
+const computerSelection = computerPlay();
 
 let computerPoints = 0;
 let playerPoints = 0;
@@ -81,14 +81,18 @@ function computerPlay(){
 
     //looping the game
     function gameloop(){
-        while (playerPoints < 2 && computerPoints < 2) {
-            
-}
+        while (playerPoints < 5 && computerPoints < 5) {
+        const computerSelection = computerPlay();
+        const playerSelection = prompt("Choose your weapon");
+        alert(playRound(playerSelection, computerSelection))
+     };
+    
+         if(playerPoints === 5){
+         console.log("Congratulations! You won the game!")
+      }
+         else{
+          window.alert("If you want to play again, please refresh the page")
+      }
+    };
 
-    }
-const playerSelection = prompt("Choose your weapon");
-
-const computerSelection = computerPlay();
-console.log(playRound(playerSelection, computerSelection));
-
-
+    gameloop();
