@@ -25,8 +25,14 @@ function computerPlay(){
 
 //Display result section
 
-//Button reactionsbtn.addEventListener('click', function(e) => )
+//Button reactions
+const rockbtn = 
+btn.addEventListener('click', function(e)){
+    const para = document.createElement('p');
+    const rockcontainer = document.querySelector('#rockcontainer').appendChild(para);
+    para.textContent = "You clicked rock";
 }
+
 //One round of the game
 
     function playRound(playerSelection, computerSelection){
