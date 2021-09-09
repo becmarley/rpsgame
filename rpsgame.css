@@ -1,0 +1,17 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 0;
+    margin-right:0;
+    background-color:#9cd9c8;
+}
+
+#title {
+    display:flex;
+    text-align:center;
+    justify-content: center;
+}
+#btn-container{
+    display:flex;
+    justify-content:space-evenly;
+
+}

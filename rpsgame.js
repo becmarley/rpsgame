@@ -1,3 +1,4 @@
+//Response and points variables
 const options = ["rock", "paper", "scissors"];
 const rock = options[0];
 const paper = options[1];
@@ -10,17 +11,22 @@ const playerWin = "You won! ";
 const computerWin = "You lose! ";
 const oops = "Please try again";
 const computerSelection = computerPlay();
-
 let computerPoints = 0;
 let playerPoints = 0;
 
+//eventLIsteners to html
+const results = document.querySelector('#result-container');
+const btn = document.querySelectorAll('btn');
 //Computer's choice
 function computerPlay(){
  let compChoice = options[Math.floor(Math.random() * options.length)];
     return compChoice;
-    }
+}
 
+//Display result section
 
+//Button reactionsbtn.addEventListener('click', function(e) => )
+}
 //One round of the game
 
     function playRound(playerSelection, computerSelection){
@@ -79,8 +85,11 @@ function computerPlay(){
        }
 };
 
+
+
+
     //looping the game
-    function gameloop(){
+    /*function gameloop(){
         while (playerPoints < 5 && computerPoints < 5) {
         const computerSelection = computerPlay();
         const playerSelection = prompt("Choose your weapon");
@@ -95,4 +104,5 @@ function computerPlay(){
       }
     };
 
-    gameloop();
+    gameloop();*/ 
+    
