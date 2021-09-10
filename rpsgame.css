@@ -1,7 +1,7 @@
 * {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin-left: 0;
-    margin-right:0;
+    margin-right: 0;
     background-color:#9cd9c8;
 }
 
@@ -15,3 +15,10 @@
     justify-content:space-evenly;
 
 }
+ #resultContainer {
+     display:flex;
+     border: solid;
+     height:200px;
+     width:300px;
+     ;
+ }

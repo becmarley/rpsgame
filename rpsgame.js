@@ -10,31 +10,30 @@ const tie = "It was a tie";
 const playerWin = "You won! ";
 const computerWin = "You lose! ";
 const oops = "Please try again";
-const computerSelection = computerPlay();
 let computerPoints = 0;
 let playerPoints = 0;
 
-//eventLIsteners to html
-const results = document.querySelector('#result-container');
+//eventListeners to html
+
 const btn = document.querySelectorAll('btn');
+const rockbtn = document.querySelector('#rockbtn');
+const paperbtn = document.querySelector('#paperbtn');
+const scissorsbtn = document.querySelector('#scissorsbtn');
+const resultContainer = document.querySelector('#resultContainer')
+
 //Computer's choice
+
 function computerPlay(){
- let compChoice = options[Math.floor(Math.random() * options.length)];
-    return compChoice;
+let compChoice = options[Math.floor(Math.random() * options.length)];
+let compResult = document.getElementById('computerResult');
+const compPara = document.createElement('p');
+compResult.appendChild(compPara);
+compPara.textContent = compChoice;
+return compChoice;
 }
 
-//Display result section
-
-//Button reactions
-const rockbtn = 
-btn.addEventListener('click', function(e)){
-    const para = document.createElement('p');
-    const rockcontainer = document.querySelector('#rockcontainer').appendChild(para);
-    para.textContent = "You clicked rock";
-}
 
 //One round of the game
-
     function playRound(playerSelection, computerSelection){
         if (playerSelection === computerSelection){
             console.log(playerSelection,playerPoints);
@@ -90,6 +89,23 @@ btn.addEventListener('click', function(e)){
             return oops;
        }
 };
+
+//Button reactions 
+rockbtn.addEventListener('click', rockPlay);
+paperbtn.addEventListener('click',paperPlay);
+scissorsbtn.addEventListener('click', scissorsPlay);
+
+function rockPlay(){
+    playRound(rock, computerPlay());
+}
+
+
+function paperPlay(){
+    playRound(paper, computerPlay());
+}
+function scissorsPlay(){
+    playRound(scissors, computerPlay());
+}
 
 
 
