@@ -20,15 +20,11 @@ const rockbtn = document.querySelector('#rockbtn');
 const paperbtn = document.querySelector('#paperbtn');
 const scissorsbtn = document.querySelector('#scissorsbtn');
 const resultContainer = document.querySelector('#resultContainer')
-
+const resultPara = document.querySelector('#resultPara')
 //Computer's choice
 
 function computerPlay(){
 let compChoice = options[Math.floor(Math.random() * options.length)];
-let compResult = document.getElementById('computerResult');
-const compPara = document.createElement('p');
-compResult.appendChild(compPara);
-compPara.textContent = compChoice;
 return compChoice;
 }
 
@@ -36,6 +32,8 @@ return compChoice;
 //One round of the game
     function playRound(playerSelection, computerSelection){
         if (playerSelection === computerSelection){
+            let results = tie;
+            resultPara.textContent = results;
             console.log(playerSelection,playerPoints);
             console.log(computerSelection, computerPoints);
             return tie;
@@ -43,6 +41,8 @@ return compChoice;
 
         else if(playerSelection === rock && computerSelection === paper){
             computerPoints = computerPoints + 1;
+            let results = computerWin + paperWin;
+            resultPara.textContent = results;
             console.log(playerSelection,playerPoints);
             console.log(computerSelection,computerPoints);
             return computerWin + paperWin;
@@ -50,6 +50,7 @@ return compChoice;
 
         else if(playerSelection === rock && computerSelection === scissors){
             playerPoints = playerPoints + 1;
+            let results = playerWin + rockWin;
             console.log(playerSelection,playerPoints);
             console.log(computerSelection,computerPoints);
             return playerWin + rockWin;
@@ -57,6 +58,8 @@ return compChoice;
         
         else if(playerSelection === paper && computerSelection === rock){
             playerPoints = playerPoints + 1;
+            let results = playerWin + paperWin;
+            resultPara.textContent = results;
             console.log(playerSelection,playerPoints);
             console.log(computerSelection,computerPoints);
             return playerWin + paperWin;
@@ -64,6 +67,8 @@ return compChoice;
         
         else if(playerSelection === paper && computerSelection === scissors){
             computerPoints = computerPoints + 1;
+            let results = computerWin + scissorsWin;
+            resultPara.textContent = results;
             console.log(playerSelection,playerPoints);
             console.log(computerSelection,computerPoints);
             return computerWin + scissorsWin;
@@ -71,6 +76,8 @@ return compChoice;
 
         else if(playerSelection === scissors && computerSelection === rock){
             computerPoints = computerPoints + 1;
+            let results = computerWin + rockWin;
+            resultPara.textContent = results;
             console.log(playerSelection,playerPoints);
             console.log(computerSelection,computerPoints);
             return computerWin + rockWin;
@@ -78,12 +85,15 @@ return compChoice;
 
         else if(playerSelection === scissors && computerSelection === paper){
             playerPoints = playerPoints + 1;
+            let results = playerWin + scissorsWin;
+            resultPara.textContent = results;
             console.log(playerSelection,playerPoints);
             console.log(computerSelection,computerPoints);
             return playerWin + scissorsWin;
         }
 
         else{
+            resultPara.textContent = results;
             console.log(playerSelection,playerPoints);
             console.log(computerSelection,computerPoints);
             return oops;
@@ -92,7 +102,7 @@ return compChoice;
 
 //Button reactions 
 rockbtn.addEventListener('click', rockPlay);
-paperbtn.addEventListener('click',paperPlay);
+paperbtn.addEventListener('click', paperPlay);
 scissorsbtn.addEventListener('click', scissorsPlay);
 
 function rockPlay(){
