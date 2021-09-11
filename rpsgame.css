@@ -39,6 +39,14 @@ nav{
     color:white;
     border-color:#414141;
 }
+.compbtn {
+    border-radius: 20pt;
+    width:100px;
+    height:35px;
+    background-color:#414141;
+    color:white;
+    border-color:#414141;
+}
 #rockbtn:hover, #paperbtn:hover,  #scissorsbtn:hover{
     border: solid gold 3pt;
 }
@@ -72,10 +80,7 @@ nav{
     margin-top: 40px;
  }
 
- #compRock:active, #compPaper:active, #compScissors:active{
-    background-color:gold;
-    color:#414141;
- }
+
 
  #resultPara {
     background-color:white;
