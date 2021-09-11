@@ -47,10 +47,11 @@ return compChoice;
             console.log(computerSelection,computerPoints);
             return computerWin + paperWin;
         }
-
+  
         else if(playerSelection === rock && computerSelection === scissors){
             playerPoints = playerPoints + 1;
             let results = playerWin + rockWin;
+            resultPara.textContent = results;
             console.log(playerSelection,playerPoints);
             console.log(computerSelection,computerPoints);
             return playerWin + rockWin;
